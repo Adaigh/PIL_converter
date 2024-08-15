@@ -2,6 +2,11 @@
 
 A simple side project to create a program that I can use to convert images between filetypes quickly and easily.
 
+Tech:
+  Python
+  PIL
+  Tkinter
+  
 Goals:
 1. Create basic Tkinter GUI
 2. Expose image conversion functions of PIL
