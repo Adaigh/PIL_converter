@@ -13,7 +13,7 @@ def generate_program_window():
 
     def pickFiles():
         global paths
-        paths = [file for file in askopenfilenames(parent=window, title="Select the images you want to convert", filetypes=types)]
+        paths = [file.strip() for file in askopenfilenames(parent=window, title="Select the images you want to convert", filetypes=types)]
         new_message = ''
         for p in paths:
             new_message += p.split('/')[-1] + '\n'
