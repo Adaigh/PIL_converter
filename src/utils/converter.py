@@ -49,7 +49,7 @@ class RGBImageConverter:
         name, extension = self.extract_img_data(absolute_path)
         self.activate_heif(extension)
         image = Image.open(absolute_path)
-        self.handle_transparency(image)
+        image = self.handle_transparency(image)
         outfile_name = name + self.img_format
         image.save(self.out_dir + outfile_name)
 
@@ -66,9 +66,10 @@ class RGBImageConverter:
     def handle_transparency(self, img):
         # convert RGBA to RGB
         if img.mode == "RGBA" and self.img_format in ['.jpg', '.jpeg']:
-            background = Image.new("RGB", image.size, (255, 255, 255))
-            background.paste(image, mask=image.getchannel('A'))
-            image = background
+            background = Image.new("RGB", img.size, (255, 255, 255))
+            background.paste(img, mask=img.getchannel('A'))
+            return background
+        return img
     
     def validate_output_requirements(self):
         # output format validation
