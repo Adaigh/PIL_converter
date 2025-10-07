@@ -1,3 +1,28 @@
+"""
+PIL Image Converter - Core Conversion Utilities
+
+This module contains the RGBImageConverter class, which provides the core functionality
+for converting images between different formats using the PIL (Pillow) library.
+
+The converter handles:
+- Multiple input/output formats (24+ supported formats)
+- HEIF/HEIC format support via pillow-heif
+- Automatic transparency handling (RGBA to RGB conversion for JPEG output)
+- Input validation and error handling
+- Flexible output directory configuration
+
+Supported Formats:
+    Input/Output: JPG, JPEG, PNG, BMP, HEIC, HEIF, BLP, DDS, DIB, EPS, GIF,
+                  ICNS, ICO, IM, MSP, PCX, PFM, PPM, TGA, TIFF, WebP
+
+Classes:
+    RGBImageConverter: Main converter class with format conversion capabilities
+
+Author: Adaigh
+Project: PIL_converter
+Date: 2025
+"""
+
 from PIL import Image
 from pillow_heif import register_heif_opener
 
