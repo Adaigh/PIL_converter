@@ -30,7 +30,7 @@ class RGBImageConverter:
 
     def extract_img_data(self, path):
         name, extension = path.split('/')[-1].split('.')
-        self.validate_input_extension(extension)
+        self.validate_input_extension(name, extension)
         return name, extension
     
     def activate_heif(self, extension):
@@ -54,7 +54,7 @@ class RGBImageConverter:
         if self.out_dir is None:
             raise ValueError("Invalid output directory")
         
-    def validate_input_extension(self, extension):
+    def validate_input_extension(self, name, extension):
         # input format validation
         if f".{extension.lower()}" not in formats:
             raise ValueError(f"Input image format unsupported: {'.'.join([name, extension])}")
