@@ -3,7 +3,7 @@ from pillow_heif import register_heif_opener
 
 formats = ['.jpg', '.jpeg', '.png', '.bmp', '.heic', '.heif', '.blp', '.dds', '.dib', '.eps', '.gif', '.icns', '.ico', '.im', '.msp', '.pcx', '.pfm', '.ppm', '.tga', '.tiff', '.webp']
 
-class RGBImageConverter():
+class RGBImageConverter:
     def __init__(self, img_format:str = None, output_directory: str = None):
         self.out_dir = output_directory      
         self.registered = False
@@ -49,7 +49,7 @@ class RGBImageConverter():
         image = Image.open(absolute_path)
 
         # convert RGBA to RGB
-        if image.mode == "RGBA":
+        if image.mode == "RGBA" and self.img_format in ['.jpg', '.jpeg']:
             background = Image.new("RGB", image.size, (255, 255, 255))
             background.paste(image, mask=image.getchannel('A'))
             image = background
