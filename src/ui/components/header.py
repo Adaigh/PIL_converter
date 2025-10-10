@@ -1,6 +1,5 @@
 from tkinter import X
 from tkinter.ttk import Frame, Label
-from .styles import colors
 
 def Header(main_window, title, subtitle) -> None:
     """

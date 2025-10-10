@@ -23,7 +23,7 @@ Project: PIL_converter
 Date: 2025
 """
 
-from tkinter import Tk, BOTH, X
+from tkinter import Tk, BOTH
 from tkinter.ttk import Frame
 
 from .components.header import Header

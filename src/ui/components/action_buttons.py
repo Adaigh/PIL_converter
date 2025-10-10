@@ -1,6 +1,5 @@
 from tkinter import X, LEFT
 from tkinter.ttk import Frame, Button
-from .styles import colors
 from ..functions import pick_files, start_conversion
 
 
