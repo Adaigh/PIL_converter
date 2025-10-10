@@ -3,7 +3,14 @@ from tkinter.ttk import Frame, Label
 from .styles import colors
 
 def Header(main_window, title, subtitle) -> None:
-
+    """
+    Create a the program header component.
+    
+    Args:
+        main_window: The main application window
+        title: The text for the main title
+        subtitle: The text for the header subtitle
+    """
     header_frame = Frame(
         main_window,
         style='Header.TFrame',

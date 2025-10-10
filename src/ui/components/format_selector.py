@@ -1,9 +1,15 @@
 from tkinter import X, LEFT
 from tkinter.ttk import Frame, Label, Combobox
-
 from utils.converter import formats
 
 def FormatSelector(content_frame, label_text):
+    """
+    Create a format selection dropdown component.
+    
+    Args:
+        content_frame: The parent frame to attach this component to
+        label_text: The text to describe the dropdown
+    """
 
     format_card = Frame(
         content_frame,

@@ -34,6 +34,11 @@ import os
 from tkinter import messagebox, NORMAL, DISABLED, END
 from dotenv import load_dotenv
 from tkinter.filedialog import askopenfilenames
+import sys
+import os
+
+# Add the parent directory to sys.path to access utils
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from utils.converter import RGBImageConverter, formats
 
 load_dotenv()
